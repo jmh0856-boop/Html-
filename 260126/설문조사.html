@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="백엔드 지망생 명호의 개발 설문조사 페이지입니다.">
+    <meta name="keywords" content="백엔드, 개발자, 설문조사, 파이썬, 자바">
+    <meta name="author" content="명호">
+    <title>명호의 백엔드 설문지</title>
+</head>
+
+<body>
+    <form action="https://webhook.site/cf521fc4-931c-4e76-8241-ab6311f7f0e4" method="POST">
+        <div style="background-color: #f9f9f9; padding: 20px; border-radius: 10px;">
+            <h3><mark>백엔드 개발</mark> 설문조사</h3><hr>
+            <p>백엔드 개발에서 가장 중요하게 생각하는 요소는 무엇인가요?</p>
+
+            <input type="radio" id="logic" name="backend_priority" value="logic">
+            <label for="logic">비지니스 로직의 정확성</label><br>
+
+            <input type="radio" id="db" name="backend_priority" value="db">
+            <label for="db">데이터베이스 설계 및 최적화</label><br>
+
+            <input type="radio" id="security" name="backend_priority" value="security">
+            <label for="security">보안 및 인증 처리</label><br>
+
+            <input type="radio" id="performance" name="backend_priority" value="performance">
+            <label for="performance">빠른 응답 속도와 성능</label><br>
+        </div><br>
+
+        <div style="background-color: #f9f9f9; padding: 20px; border-radius: 10px;">
+            <p>현재 주력으로 공부 중인 언어는?</p>
+            <select name="main_lang">
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="javascript">JavaScript</option>
+                <option value="c">C++</option>
+            </select>
+        </div><br>
+
+        <div style="background-color: #f9f9f9; padding: 20px; border-radius: 10px;">
+            <p>백엔드 개발자가 되고 싶은 이유를 짧게 적어주세요.</p>
+            <textarea name="reason" rows="10" cols="50" placeholder="여기에 작성해 주세요"></textarea>
+            <br><br>
+            <input type="submit" value="전체 설문 투표하기">
+        </div>
+    </form>
+</body>
+</html>
