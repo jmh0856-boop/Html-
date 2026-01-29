@@ -1,30 +1,32 @@
-/* 기본 레이아웃 및 라이트모드 */
+/* 기본 레이아웃 및 라이트모드 설정 */
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    transition: background-color 0.3s, color 0.3s; /* 부드러운 전환 효과 */
+    font-family: Arial, sans-serif; /* 기본 글꼴 설정: Arial 우선, 없을 시 고딕체 계열 */
+    background-color: #f4f4f4; /* 전체 배경색: 연한 회색 */
+    margin: 0; /* 브라우저 기본 여백 제거 */
+    display: flex; /* Flexbox 레이아웃 적용 */
+    justify-content: center; /* 가로 방향 중앙 정렬 */
+    align-items: center; /* 세로 방향 중앙 정렬 */
+    min-height: 100vh; /* 화면 높이를 꽉 채우도록 설정 */
+    transition: background-color 0.3s, color 0.3s; /* 모드 변경 시 0.3초 동안 부드럽게 전환 */
 }
 
 .container {
-    background-color: #fff;
-    padding: 20px 20px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    width: 100%;
-    max-width: 400px;
+    background-color: #fff; /* 컨테이너 배경색: 흰색 */
+    padding: 20px 20px; /* 내부 여백 설정 */
+    border-radius: 20px; /* 테두리 모서리를 둥글게 곡률 부여 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 입체감을 위한 그림자 효과 */
+    width: 100%; /* 너비를 부모 요소에 맞춤 */
+    max-width: 400px; /* 최대 너비를 400px로 제한하여 가독성 확보 */
 }
 
 .registration-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    display: flex; /* 내부 요소들을 Flexbox로 배치 */
+    flex-direction: column; /* 요소들을 세로 방향으로 정렬 */
+    gap: 10px; /* 각 입력 그룹 사이의 세로 간격 유지 */
 }
 
+/* 각 입력 그룹(레이블 + 인풋박스) 정렬 */
 .id-group,
 .password-group,
 .password-confirm-group,
@@ -32,10 +34,11 @@ body {
 .mobile-number-group,
 .sex-group,
 .email-group { 
-    display: flex;
-    align-items: center;
+    display: flex; /* 레이블과 입력창을 가로로 배치 */
+    align-items: center; /* 항목들을 세로 중앙에 수평 정렬 */
 }
 
+/* 레이블(항목 이름) 스타일 설정 */
 .id-group label,
 .password-group label,
 .password-confirm-group label,
@@ -43,97 +46,100 @@ body {
 .mobile-number-group label,
 .sex-group label,
 .email-group label { 
-    width: 120px;
-    margin-right: 10px;
-    font-weight: bold;
-    flex-shrink: 0;
+    width: 120px; /* 모든 레이블 너비를 통일하여 입력창 시작 위치를 맞춤 */
+    margin-right: 10px; /* 레이블과 입력창 사이의 간격 */
+    font-weight: bold; /* 항목 이름을 굵게 강조 */
+    flex-shrink: 0; /* 화면이 작아져도 레이블 너비가 줄어들지 않게 고정 */
 }
 
+/* 모든 텍스트 입력 필드 공통 스타일 */
 .registration-form input[type="text"],
 .registration-form input[type="password"],
 .registration-form input[type="tel"],
 .registration-form input[type="email"] {
-    flex-grow: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    flex-grow: 1; /* 가로 공간의 남은 부분을 꽉 채움 */
+    padding: 8px; /* 입력창 내부 글자 여백 */
+    border: 1px solid #ccc; /* 테두리 선 색상 설정 */
+    border-radius: 4px; /* 입력창 모서리 곡률 */
+    box-sizing: border-box; /* 패딩과 테두리가 너비 계산에 포함되도록 설정 */
 }
 
+/* 성별 선택 라디오 버튼 레이블 스타일 */
 .sex-options label {
-    width: auto;
-    margin-right: 15px;
-    font-weight: normal;
+    width: auto; /* 고정 너비 해제하여 글자 길이에 맞춤 */
+    margin-right: 15px; /* 선택지 사이의 가로 간격 */
+    font-weight: normal; /* 선택지 글자는 일반 굵기로 설정 */
 }
 
+/* 회원가입 버튼 스타일 */
 .sign-up-btn {
-    padding: 10px 25px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
-    width: 100%;
-    margin-top: 15px;
+    padding: 10px 25px; /* 버튼의 위아래 및 좌우 크기 조절 */
+    border: none; /* 기본 테두리 제거 */
+    border-radius: 5px; /* 버튼 모서리 곡률 */
+    font-weight: bold; /* 버튼 내부 글자 굵게 */
+    cursor: pointer; /* 마우스 오버 시 클릭 손가락 모양 표시 */
+    background-color: #4CAF50; /* 버튼 배경색: 초록색 */
+    color: white; /* 버튼 글자색: 흰색 */
+    width: 100%; /* 버튼을 컨테이너 너비에 꽉 맞게 설정 */
+    margin-top: 15px; /* 폼 요소와의 상단 간격 확보 */
 }
 
-.sign-up-btn:hover { background-color: #45a049; }
+/* 가입 버튼에 마우스 올렸을 때 효과 */
+.sign-up-btn:hover { 
+    background-color: #45a049; /* 배경색을 조금 더 진한 초록색으로 변경 */
+}
 
-/* 다크모드 스타일 */
+/* 2. 다크모드 스타일 (body.dark-mode 활성화 시) */
 
 body.dark-mode {
-    background-color: #212529 !important;
-    color: #f8f9fa !important;
+    background-color: #212529 !important; /* 전체 배경을 어두운 검은색으로 변경 */
+    color: #f8f9fa !important; /* 기본 글자색을 밝은 회색으로 변경 */
 }
 
 body.dark-mode .container {
-    background-color: #343a40 !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    color: #f8f9fa;
+    background-color: #343a40 !important; /* 컨테이너 배경을 짙은 회색으로 변경 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* 그림자를 더 진하게 하여 강조 */
+    color: #f8f9fa; /* 내부 글자색 유지 */
 }
 
 /* 다크모드 시 입력창 스타일 */
 body.dark-mode input {
-    background-color: #495057;
-    color: white;
-    border: 1px solid #6c757d;
+    background-color: #495057; /* 입력창 내부 배경색 변경 */
+    color: white; /* 입력하는 글자색 변경 */
+    border: 1px solid #6c757d; /* 테두리 선을 밝게 변경 */
 }
 
-/* 다크모드 시 placeholder(흐린 글자) 색상 조절 */
+/* 입력창 내부 힌트 텍스트(Placeholder) 색상 조절 */
 body.dark-mode input::placeholder {
-    color: #adb5bd;
+    color: #adb5bd; /* 옅은 회색으로 설정하여 가독성 확보 */
 }
 
-/* 다크모드 버튼 자체의 스타일 보정 */
-#dark-mode-toggle.btn-outline-dark {
-    border-color: #f8f9fa;
-    color: #f8f9fa;
-}
+/* 3. 다크모드 토글 버튼 전용 스타일 */
 
 #dark-mode-toggle {
-    color: #555 !important;           /* 평소에도 잘 보이는 회색 */
-    border: 1px solid #ddd !important; /* 연한 테두리 */
-    font-weight: 500;
-    background-color: #fcfcfc;        /* 아주 살짝 배경색을 주어 구분감 생성 */
-    transition: all 0.3s ease;
+    color: #555 !important; /* 기본 모드: 글자색 진한 회색 */
+    border: 1px solid #ddd !important; /* 기본 모드: 연한 테두리 */
+    font-weight: 500; /* 글자 굵기 중간 */
+    background-color: #fcfcfc; /* 버튼이 배경과 구분되도록 아주 연한 배경색 추가 */
+    transition: all 0.3s ease; /* 모든 상태 변화를 0.3초 동안 부드럽게 처리 */
 }
 
-/* 마우스를 올렸을 때의 확실한 피드백 */
+/* 토글 버튼 마우스 오버 시 효과 */
 #dark-mode-toggle:hover {
-    background-color: #333 !important;
-    color: #fff !important;
-    border-color: #333 !important;
+    background-color: #333 !important; /* 배경을 진하게 */
+    color: #fff !important; /* 글자를 하얗게 */
+    border-color: #333 !important; /* 테두리도 진하게 */
 }
 
-/* 다크모드 활성화 시 버튼 스타일 */
+/* 다크모드 활성화 시 토글 버튼 스타일 반전 */
 body.dark-mode #dark-mode-toggle {
-    color: #f8f9fa !important;
-    border-color: #6c757d !important;
-    background-color: transparent;
+    color: #f8f9fa !important; /* 다크모드: 글자색 밝게 */
+    border-color: #6c757d !important; /* 다크모드: 테두리색 변경 */
+    background-color: transparent; /* 배경은 투명하게 */
 }
 
+/* 다크모드에서 토글 버튼 마우스 오버 시 */
 body.dark-mode #dark-mode-toggle:hover {
-    background-color: #f8f9fa !important;
-    color: #212529 !important;
+    background-color: #f8f9fa !important; /* 배경을 밝게 */
+    color: #212529 !important; /* 글자를 어둡게 반전 */
 }
