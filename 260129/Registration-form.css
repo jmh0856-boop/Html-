@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif; /* 웹 폰트 지정: Arial이 없으면 sans-serif 계열 폰트 사용 */
+    background-color: #f4f4f4; /* 배경색을 연한 회색으로 설정 */
+    margin: 0; /* body의 기본 마진(여백)을 제거 */
+    display: flex; /* Flexbox 레이아웃 활성화 */
+    justify-content: center; /* 가로 방향으로 내용을 가운데 정렬 */
+    align-items: center; /* 세로 방향으로 내용을 가운데 정렬 */
+    min-height: 100vh; /* 뷰포트 높이의 최소 100%를 차지하도록 설정 */
+}
+
+.container {
+    background-color: #fff; /* 컨테이너 배경색을 흰색으로 설정 */
+    padding: 20px 20px; /* 컨테이너 내부 여백 설정 (상하 20px, 좌우 40px) */
+    border-radius: 20px; /* 모서리를 둥글게 만듦 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 그림자 효과 추가 */
+    width: 100%; /* 너비를 100%로 설정 (max-width 내에서) */
+    max-width: 400px; /* 폼의 최대 너비 설정 */
+}
+
+.registration-form {
+    display: flex; /* Flexbox 레이아웃 활성화 */
+    flex-direction: column; /* 아이템들을 세로 방향으로 배치 */
+    gap: 10px; /* 각 그룹 사이의 간격 */
+}
+
+/* 각 입력 그룹에 대한 스타일 */
+.id-group, /* ID 그룹 */
+.password-group, /* 비밀번호 그룹 */
+.password-confirm-group, /* 비밀번호 확인 그룹 */
+.name-group, /* 이름 그룹 */
+.mobile-number-group, /* 전화번호 그룹 */
+.position-group, /* 직무 그룹 */
+.sex-group, /* 성별 그룹 */
+.email-group, /* 이메일 그룹 */
+.introduction-group { /* 자기소개 그룹 */
+    display: flex; /* Flexbox 레이아웃 활성화 */ /* 레이블과 입력 필드를 가로로 배치 */
+    align-items: center; /* 세로 방향으로 내용을 가운데 정렬 */
+}
+
+/* 레이블 너비 설정 */
+.id-group label, /* ID 그룹 레이블 */
+.password-group label, /* 비밀번호 그룹 레이블 */
+.password-confirm-group label, /* 비밀번호 확인 그룹 레이블 */
+.name-group label, /* 이름 그룹 레이블 */
+.mobile-number-group label, /* 전화번호 그룹 레이블 */
+.position-group label, /* 직무 그룹 레이블 */
+.sex-group label, /* 성별 그룹 레이블 */
+.email-group label, /* 이메일 그룹 레이블 */
+.introduction-group label { /* 자기소개 그룹 레이블 */
+    width: 120px; /* 레이블의 고정 너비 */
+    margin-right: 10px; /* 레이블 오른쪽에 여백 추가 */
+    font-weight: bold; /* 폰트 굵게 설정 */
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="password"],
+.registration-form input[type="tel"],
+.registration-form input[type="email"],
+.registration-form select,
+.registration-form textarea {
+    flex-grow: 1;        /* 남은 가로 공간을 모두 차지함 */
+    padding: 8px;        /* 안쪽 여백을 주어 텍스트가 안 답답하게 */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* 패딩이 너비에 영향을 주지 않도록 설정 */
+}
+
+/* 성별 라디오 버튼 옆의 라벨은 너비를 고정하지 않음 */
+.sex-options label {
+    width: auto;
+    margin-right: 15px;
+    font-weight: normal; /* 글자 굵기도 기본으로 변경하면 더 자연스러워요 */
+}
+
+.button-group {
+    display: flex;
+    justify-content: center; /* 버튼들을 중앙으로 */
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.sign-up-btn, .reset-btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s; /* 부드러운 색상 변화 */
+}
+
+.sign-up-btn {
+    background-color: #4CAF50; /* 초록색 가입 버튼 */
+    color: white;
+}
+
+.reset-btn {
+    background-color: #ddd; /* 회색 리셋 버튼 */
+    color: #333;
+}
+
+.sign-up-btn:hover { background-color: #45a049; }
+.reset-btn:hover { background-color: #ccc; }
+
+/* .registration-form 안에 있는 textarea라고 명시 */
+.registration-form textarea {
+    display: block;      /* 인라인 요소를 블록으로 변경 */
+    width: 100% !important; 
+    height: 150px !important; /* 변화를 확인하기 위해 일부러 크게 설정 */
+    resize: both;        /* 확인용: 우측 하단에 조절 핸들이 생기는지 보세요 */
+}
